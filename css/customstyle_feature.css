@@ -1,0 +1,143 @@
+#content {
+  margin: auto 0;
+  width:100%;
+}
+#weed {
+  float: left;
+  width: 100%;
+  max-width:480px;
+ //min-width: 360px;
+  height: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 0px 20px 20px 0px;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+  
+.isotope {
+  height: 100%; 
+}
+
+/* categories */
+.Research {
+  border-top: 10px solid #B39806;
+}
+#Researchbutton {
+  background-color: #B39806;
+  color: #fff;
+}
+
+.Business {
+  border-top: 10px solid #0D590C;
+}
+#Businessbutton {
+  background-color: #0D590C;
+  color: #fff;
+}
+
+.Advocacy {
+  border-top: 10px solid #901B14;
+}
+#Advocacybutton {
+  background-color: #901B14;
+  color: #fff;
+}
+
+#allbutton {
+  background-color: #183002;
+  color: #fff;
+}
+
+/* links */
+a{
+  text-decoration: none;
+  color: #4C211B;
+}
+a:hover {
+  text-decoration:underline;
+}
+#name a {
+  color: #4C211B;
+}
+#readmore a {
+  font-weight: 700;
+  color: #4C211B;
+}
+
+
+
+.headings{
+   font-size: 1.1em;
+   color: #4C211B;
+   font-weight: 700;
+   padding-bottom: 0;
+}
+
+#caption {
+  text-align: right;
+  font: 10px/12px Georgia, 'Times New Roman', Times, serif;;
+  color: #4C211B;
+  padding-bottom:2px;
+}
+
+#name {
+  font-size: 42px;
+  line-height: 50px;
+  font-weight: 700;
+}
+#subhed {
+ font-size: 22px;
+ font-weight: 600;
+ line-height:20px;
+}
+
+.label {
+   text-transform: uppercase;
+   font-size: 18px;
+   font-weight: 600;
+   line-height:20px;
+  float:right;
+  display: inline;
+  margin: 5px;
+}
+
+#inlinephoto {
+  width: 100%;
+  min-width: 360px;
+  height: auto;
+  margin: auto;
+  align: center;
+  //display: block;
+  //clear: both;
+}
+
+#smallinlinephoto {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: auto;
+  align: center;
+}
+
+#credits {
+  clear:both;
+}
+
+/* buttons */
+#top {
+  font: 22px/30px 'GibsonRegular',sans-serif;
+  margin-bottom: 30px;
+  margin: auto 0;
+  text-align: center;
+}
+#controls {
+  padding:10px;
+  width: 100%;
+}
+.filterbutton {
+  width:15%;
+  min-width:100px;
+  margin:3px;
+}
