@@ -143,9 +143,9 @@ a:hover {
   clear: both;
 }
 
-/* ---- .element-item ---- */
+/* ---- #element-item ---- */
 
-.element-item {
+#element-item {
   position: relative;
   float: left;
   font-family: sans-serif;
@@ -159,7 +159,7 @@ a:hover {
   box-shadow: 1px 1px 1px #999999;
 }
 
-.element-item img {
+#element-item img {
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -171,7 +171,7 @@ a:hover {
 }
 
 @media (max-width: 500px) {
-   .element-item {
+   #element-item {
   width: 48%! important;
 }
 
@@ -184,7 +184,7 @@ h2 {
 }
 
 @media (max-width: 320px) {
-   .element-item {
+   #element-item {
   width: 100%! important;
 }
 
@@ -203,11 +203,11 @@ h2 {
 
 
 
-.element-item > * {
+#element-item > * {
  
 }
 
-.element-item .category {
+#element-item .category {
   
   font-weight: bold;
   font-size: 16px;
@@ -215,33 +215,33 @@ h2 {
   text-transform: uppercase;
 }
 
-.element-item .where {
+#element-item .where {
   color: #800000;
 }
-.element-item img {
+#element-item img {
   border: 1px solid #333;
 }
 
 
-.element-item .readmore, .element-item .readmore a {
+#element-item .readmore, #element-item .readmore a {
   font-weight: bold;
   color: #800000;
   font-size: 12px;
 }
 
-.element-item .description {
+#element-item .description {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
 
-.element-item .head4 {
+#element-item .head4 {
 font-size: 13px;
 font-weight: bold;
 color: #555;
 
 }
-.element-item .name {
+#element-item .name {
   color: #333;
   font-size: 15px;
   font-weight: bold;
@@ -258,18 +258,18 @@ color: #555;
 }
 
 
-.element-item .where {
+#element-item .where {
 
   font-weight: bold;
 
 
 }
 
-.element-item .location {
+#element-item .location {
   font-weight: bold;
 }
 
-.element-item .date, .element-item .description  {
+#element-item .date, #element-item .description  {
   font-size: 13px;
 
 }

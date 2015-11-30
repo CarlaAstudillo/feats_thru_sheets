@@ -16,11 +16,12 @@ $(window).load(function() {
 
 
     function getTable(data, tabletop) {
+
         var result = [];
         var count = 1;
         $.each(data, function(i, v) {
 
-            $('#content').append('<div class="element-item"><div class="category">' + v.filtercategory + '</div><img src="' + v.piclink + '"><div class="name">' + v.title + '</div><div class="where">' + v.subhead1 + '</div><div class="head4">Age: ' + v.subhead2 + '</div><div class="description">' + v.description + '</div><div class="head4">Nationality: ' + v.subhead3 + '</div><div class="readmore">Read <a href="' + v.link + ' " target="_blank">more</a></div></div>');
+            $('#content').append('<div id="element-item"><div class="category">' + v.filtercategory + '</div><img src="' + v.piclink + '"><div class="name">' + v.title + '</div><div class="where">' + v.subhead1 + '</div><div class="head4">Age: ' + v.subhead2 + '</div><div class="description">' + v.description + '</div><div class="head4">Nationality: ' + v.subhead3 + '</div><div class="readmore">Read <a href="' + v.link + ' " target="_blank">more</a></div></div>');
 
             if ($.inArray(v.filtercategory, result) == -1) {
 
@@ -44,7 +45,7 @@ $(window).load(function() {
         $container.imagesLoaded(function() {
 
             $container.isotope({
-                itemSelector: '.element-item',
+                itemSelector: '#element-item',
                 layoutMode: 'masonry',
                 filter: function() {
                     var $this = $(this);

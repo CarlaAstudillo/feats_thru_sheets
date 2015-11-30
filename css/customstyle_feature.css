@@ -2,7 +2,7 @@
   margin: auto 0;
   width:100%;
 }
-#weed {
+#element-item {
   float: left;
   width: 100%;
   max-width:480px;
@@ -21,33 +21,13 @@
 }
 
 /* categories */
-.Research {
-  border-top: 10px solid #B39806;
-}
-#Researchbutton {
-  background-color: #B39806;
-  color: #fff;
-}
 
-.Business {
-  border-top: 10px solid #0D590C;
-}
-#Businessbutton {
-  background-color: #0D590C;
-  color: #fff;
-}
-
-.Advocacy {
-  border-top: 10px solid #901B14;
-}
-#Advocacybutton {
-  background-color: #901B14;
+.btn {
   color: #fff;
 }
 
 #allbutton {
   background-color: #183002;
-  color: #fff;
 }
 
 /* links */
@@ -77,7 +57,7 @@ a:hover {
 
 #caption {
   text-align: right;
-  font: 10px/12px Georgia, 'Times New Roman', Times, serif;;
+  font: 10px/12px Georgia, 'Times New Roman', Times, serif;
   color: #4C211B;
   padding-bottom:2px;
 }
@@ -126,13 +106,15 @@ a:hover {
 }
 
 /* buttons */
-#top {
+#filter {
   font: 22px/30px 'GibsonRegular',sans-serif;
   margin-bottom: 30px;
   margin: auto 0;
   text-align: center;
+   padding:10px;
+  width: 100%;
 }
-#controls {
+.controls {
   padding:10px;
   width: 100%;
 }
@@ -140,4 +122,9 @@ a:hover {
   width:15%;
   min-width:100px;
   margin:3px;
+}
+
+.filterbutton a:hover {
+  color: #fff;
+
 }
