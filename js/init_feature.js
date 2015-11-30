@@ -6,6 +6,9 @@ $(window).load(function() {
     var filterFns;
     var $container = $('#content')
 
+    var public_spreadsheet_url = '1Jn4I3FIerKG5UGJSq3c3bEDs_V_9OxIGUnJ-Bu-3vEQ';
+
+
 
 
     Tabletop.init({
@@ -78,8 +81,6 @@ $(window).load(function() {
         $('#filter').on('click', 'button', function() {
             // get filter value from option value
             buttonFilter = $(this).attr('data-filter');
-            console.log(buttonFilter)
-
             if (buttonFilter != "*") {
 
                 $container.isotope({
