@@ -5,63 +5,11 @@
 }
 
 #content-all {
-  font-family: sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   margin: 10px;
   line-height: 1.5;
+
 }
-
-/**** Isotope CSS3 transitions ****/
-
-.isotope,
-.isotope .isotope-item {
-  -webkit-transition-duration: 0.8s;
-     -moz-transition-duration: 0.8s;
-      -ms-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
-          transition-duration: 0.8s;
-}
-
-.isotope {
-  -webkit-transition-property: height, width;
-     -moz-transition-property: height, width;
-      -ms-transition-property: height, width;
-       -o-transition-property: height, width;
-          transition-property: height, width;
-}
-
-.isotope .isotope-item {
-  -webkit-transition-property: -webkit-transform, opacity;
-     -moz-transition-property:    -moz-transform, opacity;
-      -ms-transition-property:     -ms-transform, opacity;
-       -o-transition-property:      -o-transform, opacity;
-          transition-property:         transform, opacity;
-}
-
-/**** disabling Isotope CSS3 transitions ****/
-
-.isotope.no-transition,
-.isotope.no-transition .isotope-item,
-.isotope .isotope-item.no-transition {
-  -webkit-transition-duration: 0s;
-     -moz-transition-duration: 0s;
-      -ms-transition-duration: 0s;
-       -o-transition-duration: 0s;
-          transition-duration: 0s;
-}
-
-/* End: Recommended Isotope styles */
-
-
-
-/* disable CSS transitions for containers with infinite scrolling*/
-.isotope.infinite-scrolling {
-  -webkit-transition: none;
-     -moz-transition: none;
-      -ms-transition: none;
-       -o-transition: none;
-          transition: none;
-}
-
 
 /* ---- button ---- */
 
@@ -208,24 +156,25 @@ h2 {
 }
 
 #element-item .category {
-  
-  font-weight: bold;
-  font-size: 16px;
-  color: #800000;
+  display: inline-block;
+  font-size: 15px;
+  background-color: #ED204C;
+  padding: 5px 25px;
+  color: #fff;
+  width: auto;
   text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
-#element-item .where {
-  color: #800000;
-}
+
 #element-item img {
   border: 1px solid #333;
 }
 
 
 #element-item .readmore, #element-item .readmore a {
-  font-weight: bold;
-  color: #800000;
+  font-weight: 700;
+  color: #ED204C;
   font-size: 12px;
 }
 
@@ -235,16 +184,16 @@ h2 {
 }
 
 
-#element-item .head4 {
+#element-item .boldsubhed {
 font-size: 13px;
-font-weight: bold;
-color: #555;
+font-weight: 700;
+color: #666;
 
 }
 #element-item .name {
   color: #333;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   padding-top: 5px;
 
@@ -258,15 +207,16 @@ color: #555;
 }
 
 
-#element-item .where {
+#element-item .colorsubhed {
 
-  font-weight: bold;
+  font-weight: 700;
+  color: #ED204C;
 
 
 }
 
 #element-item .location {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 #element-item .date, #element-item .description  {

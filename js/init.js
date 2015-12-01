@@ -6,7 +6,26 @@ $(window).load(function() {
     var $container = $('#content')
     var timeout;
 
+    var timestampdata = "https://spreadsheets.google.com/feeds/cells/1Jn4I3FIerKG5UGJSq3c3bEDs_V_9OxIGUnJ-Bu-3vEQ/od6/public/basic?alt=json"
+
+
+
     var public_spreadsheet_url = '1Jn4I3FIerKG5UGJSq3c3bEDs_V_9OxIGUnJ-Bu-3vEQ';
+
+    $.ajax({
+    url:timestampdata,
+    dataType:"jsonp",
+    success:function(data) {
+        console.log(data.feed.updated.$t)
+
+        var date = new Date(data.feed.updated.$t)
+        //date 2015-11-30T22:53:34.109Z
+        $('.updated').append("Last updated " + date)
+        // data.feed.entry is an array of objects that represent each cell
+
+    },
+});
+
 
 
     // Tabletop initialization
@@ -28,11 +47,12 @@ $(window).load(function() {
 
         $.each(data, function(i, v) {
 
+
             // Parses the resulting JSON into individual squares
 
-            $('#content').append('<div id="element-item"><div class="category">' + v.filtercategory + '</div><img src="' + v.piclink + '"><div class="name">' + v.title + '</div><div class="where">' + v.subhead1 + '</div><div class="head4">Age: ' + v.subhead2 + '</div><div class="description">' + v.description + '</div><div class="head4">Nationality: ' + v.subhead3 + '</div><div class="readmore">Read <a href="' + v.link + ' " target="_blank">more</a></div></div>');
+            $container.append('<div id="element-item"><div class="category">' + v.filtercategory + '</div><img src="' + v.piclink + '"><div class="name">' + v.title + '</div><div class="colorsubhed">' + v.subhed1 + '</div><div class="boldsubhed">Age: ' + v.subhed2 + '</div><div class="description">' + v.description + '</div><div class="boldsubhed">Nationality: ' + v.subhed3 + '</div><div class="readmore">Read <a href="' + v.link + ' " target="_blank">more</a></div></div>');
 
-            
+
             // Gets all unique filtercategory values and puts them into an array
             if ($.inArray(v.filtercategory, result) == -1) {
 
@@ -78,7 +98,7 @@ $(window).load(function() {
 
 
 
-// debounce so filtering doesn't happen every millisecond
+        // debounce so filtering doesn't happen every millisecond
         function debounce(fn, threshold) {
 
             return function debounced() {
@@ -94,7 +114,7 @@ $(window).load(function() {
             }
         }
 
-// Adds a click function to all buttons in the group
+        // Adds a click function to all buttons in the group
 
         $('.btn-group').each(function(i, buttonGroup) {
             var $buttonGroup = $(buttonGroup);
@@ -109,24 +129,24 @@ $(window).load(function() {
                 // Gets all values that matches the clicked button's data value
 
                 buttonFilter = $(this).attr('data-value');
-            textFilter = $(this).text();
+                textFilter = $(this).text();
 
 
-            function getitems() {
-                var name = $(this).find('.category').text();
+                function getitems() {
+                    var name = $(this).find('.category').text();
 
-                if (textFilter != "Show All") {
-                    return name.match(textFilter);
+                    if (textFilter != "Show All") {
+                        return name.match(textFilter);
 
-                } else {
-                    return "*";
+                    } else {
+                        return "*";
+                    }
+
                 }
 
-            }
+                buttonFilter = getitems || buttonFilter;
 
-            buttonFilter = getitems || buttonFilter;
-
-            $container.isotope();
+                $container.isotope();
 
 
             });
