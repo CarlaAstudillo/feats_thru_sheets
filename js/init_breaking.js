@@ -6,23 +6,33 @@ $(window).load(function() {
     var $container = $('#content')
     var timeout;
 
-    var timestampdata = "https://spreadsheets.google.com/feeds/cells/1Jn4I3FIerKG5UGJSq3c3bEDs_V_9OxIGUnJ-Bu-3vEQ/od6/public/basic?alt=json"
-
-
-
     var public_spreadsheet_url = '1Jn4I3FIerKG5UGJSq3c3bEDs_V_9OxIGUnJ-Bu-3vEQ';
+
+    var timestampdata = "https://spreadsheets.google.com/feeds/cells/" + public_spreadsheet_url + "/od6/public/basic?alt=json"
+
+ // Call the Google Spreadsheet as a regular JSON to get latest timestamp which is not included in Tabletop.js
+
 
     $.ajax({
     url:timestampdata,
     dataType:"jsonp",
     success:function(data) {
-        console.log(data.feed.updated.$t)
+        // Get timestamp and parse it to readable format
 
-        var date = new Date(data.feed.updated.$t)
-        //date 2015-11-30T22:53:34.109Z
-        $('.updated').append("Last updated " + date)
-        // data.feed.entry is an array of objects that represent each cell
+        
+        var date = data.feed.updated.$t
 
+        var MM = {Jan:"Jan.", Feb:"Feb.", Mar:"March", Apr:"April", May:"May", Jun:"June", Jul:"July", Aug:"Aug.", Sep:"Sept.", Oct:"Oct.", Nov:"Nov.", Dec:"Dec."}
+
+var formatdate = String(new Date(date)).replace(
+    /\w{3} (\w{3}) (\d{2}) (\d{4}) (\d{2}):(\d{2}):[^(]+\(([A-Z]{3})\)/,
+    function($0,$1,$2,$3,$4,$5,$6){
+        return MM[$1]+" "+$2+", "+$3+" at "+$4%12+":"+$5+(+$4>12?"PM":"AM")+" "+$6 
+    }
+)
+
+
+        $('.updated').append("Last updated " + formatdate)
     },
 });
 
@@ -41,16 +51,34 @@ $(window).load(function() {
 
     function getTable(data, tabletop) {
 
+        var sheetname = tabletop.foundSheetNames[0];
+        var sheetnamecontrol = tabletop.foundSheetNames[1];
+
+        // Get title of datasheet
+
+        var title = sheetname; 
+        $("h2").append(title)
+
+        // Get credits and explainer from "Control spreadsheet"
+
+        $.each(tabletop.sheets(sheetnamecontrol).all(), function(i, v) {
+      
+          var explainer = v.explainer
+          var credits = v.credits
+          $(".credit").append(credits)
+          $(".explainer").append(explainer)
+        });
+
         var result = [];
         var count = 1;
 
 
-        $.each(data, function(i, v) {
+        $.each(tabletop.sheets(sheetname).all(), function(i, v) {
 
 
             // Parses the resulting JSON into individual squares
 
-            $container.append('<div id="element-item"><div class="category">' + v.filtercategory + '</div><img src="' + v.piclink + '"><div class="name">' + v.title + '</div><div class="colorsubhed">' + v.subhed1 + '</div><div class="boldsubhed">Age: ' + v.subhed2 + '</div><div class="description">' + v.description + '</div><div class="boldsubhed">Nationality: ' + v.subhed3 + '</div><div class="readmore">Read <a href="' + v.link + ' " target="_blank">more</a></div></div>');
+            $container.append('<div id="element-item"><div class="category">' + v.filtercategory + '</div><img src="' + v.piclink + '"><div class="name">' + v.title + '</div><div class="colorsubhed">' + v.subhed1 + '</div><div class="boldsubhed">' + v.subhed2 + '</div><div class="description">' + v.description + '</div><div class="boldsubhed">Nationality: ' + v.subhed3 + '</div><div class="readmore">Read <a href="' + v.link + ' " target="_blank">more</a></div></div>');
 
 
             // Gets all unique filtercategory values and puts them into an array
