@@ -1,7 +1,12 @@
 #People & Event Database
 An interactive, filterable, searchable database of people and events that can be reskinned for different types of stories and updated solely by reporters.
+___
+
 
 ![alt text](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/breakingnews-template.png "What it looks like")
+
+___
+
 
 
 We've created two templates connecting the front-end to a back-end Google Spreadsheet using [tabletop.js.] (https://github.com/jsoma/tabletop) They can be customized by developers, and reporters can add content and images in a Google Spreadsheet and all changes will be reflected in real time. This is ideal for breaking news situations.
@@ -14,7 +19,13 @@ Reporters can also change titles, explainer text and credits. In addition, the d
 
 There's also a filter button and search option for the readers that brings up certain data. The transitions were created using [Isotope.js.] (http://isotope.metafizzy.co)
 
+___
+
+
 ![alt text](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/breakingnews-template.gif "Gif of Filtering")
+
+___
+
 
 
 Examples of articles using the tool:
