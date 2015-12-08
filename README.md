@@ -1,8 +1,21 @@
 #People & Event Database
 An interactive, filterable, searchable database of people and events that can be reskinned for different types of stories and updated solely by reporters.
 
+![alt text](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/breakingnews-template.png "What it looks like")
 
-Currently, we're creating several templates connecting the front-end to a back-end Google Spreadsheet using tabletop.js.
+
+We've created two templates connecting the front-end to a back-end Google Spreadsheet using [tabletop.js.] (https://github.com/jsoma/tabletop) They can be customized by developers, and reporters can add content and images in a Google Spreadsheet and all changes will be reflected in real time. This is ideal for breaking news situations.
+
+Reporters can also change titles, explainer text and credits. In addition, the database has a timestamp that chronicles the last time a reporter updated the database.
+
+##### Check [out what it looks like] (http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/index_breaking.html)
+
+##### ... Which is powered through [this Spreadsheet] (https://docs.google.com/spreadsheets/d/1Jn4I3FIerKG5UGJSq3c3bEDs_V_9OxIGUnJ-Bu-3vEQ/edit#gid=0)
+
+There's also a filter button and search option for the readers that brings up certain data. The transitions were created using [Isotope.js.] (http://isotope.metafizzy.co)
+
+![alt text](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/breakingnews-template.gif "Gif of Filtering")
+
 
 Examples of articles using the tool:
 
@@ -12,11 +25,12 @@ Examples of articles using the tool:
 
 ###Skip to:
 
-*[How it Works] (#how-it-works)
-*[Getting Started] (#getting-started)
-*[How Reporters Can Use It] (#how-reporters-can-use-it)
-*[Questions] (#questions)
-*[License] (#license)
+1.[How it Works] (#how-it-works)
+2.[Getting Started] (#getting-started)
+3.[How Reporters Can Use It] (#how-reporters-can-use-it)
+4.[Questions] (#questions)
+5.[Acknowledgements] (#acknowledgements)
+6.[License] (#license)
 
 ##How it Works
 
