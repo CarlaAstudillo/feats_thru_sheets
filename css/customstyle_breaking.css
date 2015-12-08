@@ -162,7 +162,8 @@ h2 {
 #element-item .category {
   display: inline-block;
   font-size: 15px;
-  background-color: #ED204C;
+  background-color: #800000;
+  /*background-color: #ED204C;*/
   padding: 5px 25px;
   color: #fff;
   width: auto;
@@ -178,7 +179,8 @@ h2 {
 
 #element-item .readmore, #element-item .readmore a {
   font-weight: 700;
-  color: #ED204C;
+  /*color: #ED204C;*/
+  color: #800000;
   font-size: 12px;
 }
 
@@ -214,7 +216,8 @@ color: #666;
 #element-item .colorsubhed {
 
   font-weight: 700;
-  color: #ED204C;
+  /*color: #ED204C;*/
+  color: #800000;
 
 
 }
