@@ -36,12 +36,18 @@ Examples of articles using the tool:
 
 ###Skip to:
 
-1.[How it Works] (#how-it-works)
-2.[Getting Started] (#getting-started)
-3.[How Reporters Can Use It] (#how-reporters-can-use-it)
-4.[Questions] (#questions)
-5.[Acknowledgements] (#acknowledgements)
-6.[License] (#license)
+[1. How it Works] (#how-it-works)
+
+[2. Getting Started] (#getting-started)
+
+[3. How Reporters Can Use It] (#how-reporters-can-use-it)
+
+[4. Questions] (#questions)
+
+[5. Acknowledgements] (#acknowledgements)
+
+[6. License] (#license)
+
 
 ##How it Works
 
