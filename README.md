@@ -64,7 +64,8 @@ More TK TK
 
 Share the Google Spreadsheet with the reporters. Every column header corresponds to a section in the data.
 
-More TK. Stay tuned.
+
+More TK TK TK. Stay tuned.
 
 ##Questions
 
