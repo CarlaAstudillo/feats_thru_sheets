@@ -52,12 +52,17 @@ Examples of articles using the tool:
 
 More TK. Stay tuned.
 
-
 ##Getting Started
 
-More TK. Stay tuned.
+The HTML file is set up in the server and a new Google Spreadsheet is created.
+
+More TK TK 
+
+###Just for IBT: Embed Code
 
 ##How Reporters Can Use It
+
+Share the Google Spreadsheet with the reporters. Every column header corresponds to a section in the data.
 
 More TK. Stay tuned.
 
