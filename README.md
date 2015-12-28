@@ -3,21 +3,21 @@ An interactive, filterable, searchable database of people and events that can be
 ___
 
 
-![alt text](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/breakingnews-template.png "What it looks like")
+![alt text](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/breakingnews-template.png "Screenshot of the People Database")
 
 ___
 
 
 
-We've created two templates connecting the front-end to a back-end Google Spreadsheet using [tabletop.js.] (https://github.com/jsoma/tabletop) They can be customized by developers, and reporters can add content and images in a Google Spreadsheet and all changes will be reflected in real time. This is ideal for breaking news situations.
+We've created two templates connecting the front-end to a back-end Google Spreadsheet using [tabletop.js.](https://github.com/jsoma/tabletop) They can be customized by developers, and reporters can add content and images in a Google Spreadsheet and all changes will be reflected in real time. This is ideal for breaking news situations.
 
 Reporters can also change titles, explainer text and credits. In addition, the database has a timestamp that chronicles the last time a reporter updated the database.
 
-##### Check [out what it looks like] (http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/index_breaking.html)
+##### Check [out what it looks like](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/index_breaking.html)
 
-##### ... Which is powered through [this Spreadsheet] (https://docs.google.com/spreadsheets/d/1Jn4I3FIerKG5UGJSq3c3bEDs_V_9OxIGUnJ-Bu-3vEQ/edit#gid=0)
+##### ... Which is powered through [this Spreadsheet](https://docs.google.com/spreadsheets/d/1Jn4I3FIerKG5UGJSq3c3bEDs_V_9OxIGUnJ-Bu-3vEQ/edit#gid=0)
 
-There's also a filter button and search option for the readers that brings up certain data. The transitions were created using [Isotope.js.] (http://isotope.metafizzy.co)
+There's also a filter button and search option for the readers that brings up certain data. The transitions were created using [Isotope.js.](http://isotope.metafizzy.co)
 
 ___
 
@@ -26,71 +26,116 @@ ___
 
 ___
 
+___
+
+Try our Template Demos: 
++ [Breaking News Template](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/index_breaking.html)
++ [Feature Profiles](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/index_feature.html)
 
 
-Examples of articles using the tool:
+How we've used it:
 
-+ Breaking News situations: [Paris attackers status] (http://www.ibtimes.com/who-are-paris-terrorists-suspects-identified-plus-everything-we-know-2191815)
-+ Feature Profiles:  [Meet The 20 Most Influential People In Cannabis] (http://www.ibtimes.com/pulse/marijuana-legalization-2015-meet-20-most-influential-people-cannabis-1887890)
-+ Guides: [Ultimate Interactive Music Festival 2015 List To Guide Your Summer Concert Experience] (http://www.ibtimes.com/pulse/ultimate-interactive-music-festival-2015-list-guide-your-summer-concert-experience-1868418)
++ [Paris attackers status](http://www.ibtimes.com/who-are-paris-terrorists-suspects-identified-plus-everything-we-know-2191815)
++ [Meet The 20 Most Influential People In Cannabis](http://www.ibtimes.com/pulse/marijuana-legalization-2015-meet-20-most-influential-people-cannabis-1887890)
+
+You can also customize the style and add your own features:
+
++ Guides: [Ultimate Interactive Music Festival 2015 List To Guide Your Summer Concert Experience](http://www.ibtimes.com/pulse/ultimate-interactive-music-festival-2015-list-guide-your-summer-concert-experience-1868418)
 
 ###Skip to:
 
-[1. How it Works] (#how-it-works)
 
-[2. Getting Started] (#getting-started)
++ [Set it Up](#set-it-up)
 
-[3. How Reporters Can Use It] (#how-reporters-can-use-it)
++ [How Reporters Can Use It](#how-reporters-can-use-it)
 
-[4. Questions] (#questions)
++ [License](#license)
 
-[5. Acknowledgements] (#acknowledgements)
 
-[6. License] (#license)
+##Set it up
 
-##How it Works
+Create a new copy of [this Google Spreadsheet](https://docs.google.com/spreadsheets/d/1Jn4I3FIerKG5UGJSq3c3bEDs_V_9OxIGUnJ-Bu-3vEQ/edit#gid=0) in Google Docs. Then, go to the File menu and click on Publish to the web. Clicking on Start Publishing will make a URL appear
 
-More TK. Stay tuned.
+```
+https://docs.google.com/spreadsheets/d/1Jn4I3FIerKG5UGJSq3c3bEDs_V_9OxIGUnJ-Bu-3vEQ/pubhtml
+```
 
-##Getting Started
+Copy only the part between the `/d/` and the `/pubhtml`. In the example above, that would be:
 
-The HTML file is set up in the server and a new Google Spreadsheet is created.
+```
+1Jn4I3FIerKG5UGJSq3c3bEDs_V_9OxIGUnJ-Bu-3vEQ
+```
 
-More TK TK 
+Open up the js folder and find the corresponding init_.js file. For the Breaking News Template, open `init_breaking.js` and for the Features Template, `open init_feature.js`
 
-###Just for IBT: Embed Code
+Paste your Google Spreadsheet code to var public_spreadsheet_url. 
+
+```javascript
+var public_spreadsheet_url = '1Jn4I3FIerKG5UGJSq3c3bEDs_V_9OxIGUnJ-Bu-3vEQ';
+```
+
+**And that's it!** You've officially connected your Google Spreadsheet 
+
+If you want to customize what shows up in the database or let it show other columns, you can customize it here within the same js file. This is the part where the resulting JSON fetched by tabletop is parsed into different divs which you can customize.
+
+```javascript
+$container.append('<div id="element-item"><div class="category">' + v.filtercategory + '</div><img src="' + v.piclink + '"><div class="name">' + v.title + '</div><div class="colorsubhed">' + v.subhed1 + '</div><div class="boldsubhed">' + v.subhed2 + '</div><div class="description">' + v.description + '</div><div class="boldsubhed">Nationality: ' + v.subhed3 + '</div><div class="readmore">Read <a href="' + v.link + ' " target="_blank">more</a></div></div>');
+
+```
+
+You can also change the filter button category by changing `v.filtercategory` to the category of your choice.
+
+```javascript
+ // Gets all unique filtercategory values and puts them into an array
+            if ($.inArray(v.filtercategory, result) == -1) {
+
+                result.push(v.filtercategory);
+
+                // Creates the filter buttons
+
+                $('#filter').append('<button id="' + v.filtercategory + '" class="btn btn-default" data-value="choice' + count++ + '">' + v.filtercategory + '</button>')
+
+            }
+
+```
+
+You can also change what the style of the database looks like by changing the corresponding CSS or HTML file.
 
 ##How Reporters Can Use It
 
-Share the Google Spreadsheet with the reporters. Every column header corresponds to a section in the data.
+Share the Google Spreadsheet with your reporters. 
+
+![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/Google_Spreadsheet.png "Google Spreadsheet")
+
+Let the reporters add new data to the Google Spreadsheet. Every column header corresponds to a section in the data.
+
+For example this:
+
+![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/Google_spreadsheet2.png "Google Spreadsheet Sample")
+
+Looks like this:
+
+![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/Sample_template.png "Sample Template")
+
+
+###What about Pictures?
+
+###How to Change the Headline and Other Text
+
+###Filter Category
+
+
+###How to Change the Headline and Other Text
+
+For pictures: Do the following
+
+If you want a title name before do it in HTML
 
 
 More TK TK TK. Stay tuned.
 
-##Questions
-
-More TK. Stay tuned.
-
 ##License
 
-Copyright (c) 2015
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+This project is released under the terms specified in the [MIT license](https://tldrlegal.com/license/mit-license). 
 
 

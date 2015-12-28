@@ -10,31 +10,44 @@ $(window).load(function() {
 
     var timestampdata = "https://spreadsheets.google.com/feeds/cells/" + public_spreadsheet_url + "/od6/public/basic?alt=json"
 
- // Call the Google Spreadsheet as a regular JSON to get latest timestamp which is not included in Tabletop.js
+    // Call the Google Spreadsheet as a regular JSON to get latest timestamp which is not included in Tabletop.js
 
 
     $.ajax({
-    url:timestampdata,
-    dataType:"jsonp",
-    success:function(data) {
-        // Get timestamp and parse it to readable format
-
-        
-        var date = data.feed.updated.$t
-
-        var MM = {Jan:"Jan.", Feb:"Feb.", Mar:"March", Apr:"April", May:"May", Jun:"June", Jul:"July", Aug:"Aug.", Sep:"Sept.", Oct:"Oct.", Nov:"Nov.", Dec:"Dec."}
-
-var formatdate = String(new Date(date)).replace(
-    /\w{3} (\w{3}) (\d{2}) (\d{4}) (\d{2}):(\d{2}):[^(]+\(([A-Z]{3})\)/,
-    function($0,$1,$2,$3,$4,$5,$6){
-        return MM[$1]+" "+$2+", "+$3+" at "+$4%12+":"+$5+(+$4>12?"PM":"AM")+" "+$6 
-    }
-)
+        url: timestampdata,
+        dataType: "jsonp",
+        success: function(data) {
+            // Get timestamp and parse it to readable format
 
 
-        $('.updated').append("Last updated " + formatdate)
-    },
-});
+            var date = data.feed.updated.$t
+
+            var MM = {
+                Jan: "Jan.",
+                Feb: "Feb.",
+                Mar: "March",
+                Apr: "April",
+                May: "May",
+                Jun: "June",
+                Jul: "July",
+                Aug: "Aug.",
+                Sep: "Sept.",
+                Oct: "Oct.",
+                Nov: "Nov.",
+                Dec: "Dec."
+            }
+
+            var formatdate = String(new Date(date)).replace(
+                /\w{3} (\w{3}) (\d{2}) (\d{4}) (\d{2}):(\d{2}):[^(]+\(([A-Z]{3})\)/,
+                function($0, $1, $2, $3, $4, $5, $6) {
+                    return MM[$1] + " " + $2 + ", " + $3 + " at " + $4 % 12 + ":" + $5 + (+$4 > 12 ? "PM" : "AM") + " " + $6
+                }
+            )
+
+
+            $('.updated').append("Last updated " + formatdate)
+        },
+    });
 
 
 
@@ -56,17 +69,17 @@ var formatdate = String(new Date(date)).replace(
 
         // Get title of datasheet
 
-        var title = sheetname; 
+        var title = sheetname;
         $("h2").append(title)
 
         // Get credits and explainer from "Control spreadsheet"
 
         $.each(tabletop.sheets(sheetnamecontrol).all(), function(i, v) {
-      
-          var explainer = v.explainer
-          var credits = v.credits
-          $(".credit").append(credits)
-          $(".explainer").append(explainer)
+
+            var explainer = v.explainer
+            var credits = v.credits
+            $(".credit").append(credits)
+            $(".explainer").append(explainer)
         });
 
         var result = [];
@@ -76,9 +89,9 @@ var formatdate = String(new Date(date)).replace(
         $.each(tabletop.sheets(sheetname).all(), function(i, v) {
 
 
-            // Parses the resulting JSON into individual squares
+            // Parses the resulting JSON into the individual squares for each row
 
-            $container.append('<div id="element-item"><div class="category">' + v.filtercategory + '</div><img src="' + v.piclink + '"><div class="name">' + v.title + '</div><div class="colorsubhed">' + v.subhed1 + '</div><div class="boldsubhed">' + v.subhed2 + '</div><div class="description">' + v.description + '</div><div class="boldsubhed">Nationality: ' + v.subhed3 + '</div><div class="readmore">Read <a href="' + v.link + ' " target="_blank">more</a></div></div>');
+            $container.append('<div id="element-item"><div class="category">' + v.filtercategory + '</div><img src="' + v.piclink + '"><div class="name">' + v.title + '</div><div class="colorsubhed">' + v.subhed1 + '</div><div class="boldsubhed">' + v.subhed2 + '</div><div class="description">' + v.description + '</div><div class="boldsubhed">' + v.subhed3 + '</div><div class="readmore">Read <a href="' + v.link + ' " target="_blank">more</a></div></div>');
 
 
             // Gets all unique filtercategory values and puts them into an array
