@@ -19,12 +19,12 @@ Reporters can also change titles, explainer text and credits. In addition, the d
 
 There's also a filter button and search option for the readers that brings up certain data. The transitions were created using [Isotope.js.](http://isotope.metafizzy.co)
 
-___
+<!-- ___
 
 
 ![alt text](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/breakingnews-template.gif "Gif of Filtering")
 
-___
+___ -->
 
 ___
 
@@ -41,6 +41,8 @@ How we've used it:
 You can also customize the style and add your own features:
 
 + Guides: [Ultimate Interactive Music Festival 2015 List To Guide Your Summer Concert Experience](http://www.ibtimes.com/pulse/ultimate-interactive-music-festival-2015-list-guide-your-summer-concert-experience-1868418)
+
+___
 
 ###Skip to:
 
@@ -121,14 +123,14 @@ The link that you put in the Google Spreadsheet will take you to that site by cl
 
 **It's very important that you don't change the bold headers on the Google Spreadsheet columns** (unless you want to change the name of the headers, which in that case, you must also change the name of the headers in the corresponding js file)
 
-#####What about Pictures?
+####What about Pictures?
 
 Every picture that you put on the database has to be uploaded to a server. Then add the link to the picture under the header "Pic_Link"
 
 ![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/pic_link.png "Pic_Link example")
 
 
-#####Filter Categories
+####Filter Categories
 
 The header "Filter_category" in the Google Spreadsheet, highlighted in yellow, are the filter buttons at the top. You can create a new category by simply adding the new category to the "Filter category". Remember that adding too many categories will add too many buttons and won't look as good.
 
@@ -142,7 +144,7 @@ Go to bottom of the Google Spreadsheet and change the tab name. That will automa
 
 ![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/headline_change.png "Change tab name at the bottom")
 
-######How to Change the Explainer and Credits
+#####How to Change the Explainer and Credits
 
 Go to bottom of the Google Spreadsheet and click on the tab called "Control". This will take you to a new spreadsheet where you can change what it says in the explainer and in the credits.
 
