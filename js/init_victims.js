@@ -3,7 +3,7 @@ $(window).load(function() {
     var qsRegex;
     var buttonFilter;
     var $quicksearch = $('#quicksearch');
-    var $container = $('#content')
+    var $container = $('#pdb-content')
     var timeout;
 
     var public_spreadsheet_url = '10cED_tPOK9THBQkFMmlhJxOLkGZx53nMbfLhSjKVT9M';
@@ -32,7 +32,7 @@ var formatdate = String(new Date(date)).replace(
 )
 
 
-        $('.updated').append("Last updated " + formatdate)
+        $('.pdb-updated').append("Last updated " + formatdate)
     },
 });
 
@@ -65,8 +65,8 @@ var formatdate = String(new Date(date)).replace(
       
           var explainer = v.explainer
           var credits = v.credits
-          $(".credit").append(credits)
-          $(".explainer").append(explainer)
+          $(".pdb-credit").append(credits)
+          $(".pdb-explainer").append(explainer)
         });
 
         var result = [];
@@ -78,7 +78,7 @@ var formatdate = String(new Date(date)).replace(
 
             // Parses the resulting JSON into individual squares
 
-$container.append('<div id="element-item"><div class="name">' + v.name + '</div><div class="tooltip"><div class="description">' + v.name + ' was killed in a mass shooting on ' + v.date2 + ' in ' + v.place + '. ' + v.tooltiptext + '</div><div class="readmore"><a href="' + v.link + ' " target="_blank">Read more</a></div><div class="hidden">' + v.date + v.shooter + '</div></div></div>');
+      $container.append('<div id="element-item"><div class="name">' + v.name + '</div><div class="tooltip"><div class="description">' + v.name + ' was killed in a mass shooting on ' + v.date2 + ' in ' + v.place + '. ' + v.tooltiptext + '</div><div class="readmore"><a href="' + v.link + ' " target="_blank">Read more</a></div><div class="hidden">' + v.date + v.shooter + '</div></div></div>');
 
 
             // Gets all unique filtercategory values and puts them into an array
@@ -155,7 +155,7 @@ $container.append('<div id="element-item"><div class="name">' + v.name + '</div>
 
   // change is-checked class on buttons
 
-  $('.button-group').each( function( i, buttonGroup ) {
+  $('.pdb-button-group').each( function( i, buttonGroup ) {
     var $buttonGroup = $( buttonGroup );
     $buttonGroup.on( 'click', 'button', function() {
       $buttonGroup.find('.is-checked').removeClass('is-checked');
