@@ -78,7 +78,7 @@ var formatdate = String(new Date(date)).replace(
 
             // Parses the resulting JSON into individual squares
 
-      $container.append('<div id="element-item"><div class="name">' + v.name + '</div><div class="tooltip"><div class="description">' + v.name + ' was killed in a mass shooting on ' + v.date2 + ' in ' + v.place + '. ' + v.killed + ' people were killed and ' + v.wounded + ' were wounded that day.</div><div class="readmore">Read <a href="' + v.link + ' " target="_blank">more</a></div><div class="hidden">' + v.date +'</div></div></div>');
+$container.append('<div id="element-item"><div class="name">' + v.name + '</div><div class="tooltip"><div class="description">' + v.name + ' was killed in a mass shooting on ' + v.date2 + ' in ' + v.place + '. ' + v.tooltiptext + '</div><div class="readmore"><a href="' + v.link + ' " target="_blank">Read more</a></div><div class="hidden">' + v.date + v.shooter + '</div></div></div>');
 
 
             // Gets all unique filtercategory values and puts them into an array
