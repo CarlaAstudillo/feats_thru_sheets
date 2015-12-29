@@ -152,7 +152,6 @@ var formatdate = String(new Date(date)).replace(
 
   $('.sort-by-button-group').each( function( i, buttonGroup ) {
     var $buttonGroup = $( buttonGroup );
-    console.log($buttonGroup)
     $buttonGroup.on( 'click', 'button', function() {
         var sortValue = $(this).attr('data-sort-value');
     $container.isotope({ sortBy: sortValue });
