@@ -4,7 +4,7 @@ $(window).load(function() {
     var timeout;
     var $container = $('#database')
 
-     var public_spreadsheet_url = '11VkMkjE-bfwDxXB46cCBOgRJoKtyDUmkMQmX1SOkU18';
+    var public_spreadsheet_url = '1ZDt9riqDhXTahTgMrvSqarU_XL0bJb2Owd43NKGd97c';
 
     var timestampdata = "https://spreadsheets.google.com/feeds/cells/" + public_spreadsheet_url + "/od6/public/basic?alt=json"
  // Call the Google Spreadsheet as a regular JSON to get latest timestamp which is not included in Tabletop.js
