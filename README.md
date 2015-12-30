@@ -29,8 +29,9 @@ ___ -->
 ___
 
 Try our Template Demos: 
-+ [Breaking News Template](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/index_breaking.html)
-+ [Feature Profiles](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/index_feature.html)
++ [Search and Filter](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/index_breaking.html)
++ [Filter Only](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/index_feature.html)
++ [Sort and Search](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/index_feature.html)
 
 
 How we've used it:
@@ -68,7 +69,7 @@ Copy only the part between the `/d/` and the `/pubhtml`. In the example above, t
 1Jn4I3FIerKG5UGJSq3c3bEDs_V_9OxIGUnJ-Bu-3vEQ
 ```
 
-Open up the js folder and find the corresponding init_.js file. For the Breaking News Template, open `init_breaking.js` and for the Features Template, open `init_feature.js`
+Pick the template you'd like to use. Open up the js folder and find the init.js file.
 
 Paste your Google Spreadsheet code to var public_spreadsheet_url. 
 
