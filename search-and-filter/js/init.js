@@ -3,7 +3,7 @@ $(window).load(function() {
     var qsRegex;
     var buttonFilter;
     var $quicksearch = $('#quicksearch');
-    var $container = $('#content')
+    var $container = $('#database')
     var timeout;
 
     var public_spreadsheet_url = '1Jn4I3FIerKG5UGJSq3c3bEDs_V_9OxIGUnJ-Bu-3vEQ';
