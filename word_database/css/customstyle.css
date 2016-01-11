@@ -1,264 +1,210 @@
-* {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body {
-  font-family: 'Source Sans Pro', sans-serif;
-  margin: 10px;
-  line-height: 1.5;
-  width: 100%;
-
-}
-h2 {
-  font-weight: 700;
-}
-
-/* ---- button ---- */
-
-.button {
-  display: inline-block;
-  padding: 0.5em 1.0em;
-  background: #EEE;
-  border: none;
-  border-radius: 7px;
-  background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2) );
-  color: #222;
-  font-family: sans-serif;
-  font-size: 16px;
-  text-shadow: 0 1px white;
-  cursor: pointer;
-}
-
-
-a {
-  color: #555;
-  font-size: 15px;
-  text-decoration: underline;
-  margin: 0;
-  padding: 0;
-  
-}
-
-a:hover {
-  color: #555;
-  
-  
-}
-
-.button:hover {
-  background-color: #8CF;
-  text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
-  color: #222;
-}
-
-.button:active,
-.button.is-checked {
-  background-color: #ED204C;
-}
-}
-
-.button.is-checked {
-  color: white;
-  text-shadow: 0 -1px hsla(0, 0%, 0%, 0.8);
-  background-color: #ED204C;
-}
-
-.button:active {
-  box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
-  background-color: #ED204C;
-}
-
-/* ---- button-group ---- */
-
-.button-group:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.button-group .button {
-  float: left;
-  border-radius: 0;
-  margin-left: 0;
-  margin-right: 1px;
-}
-
-.button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
-.button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; }
-
-/* ---- isotope ---- */
-
-
-/* clear fix */
-.isotope:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-/* ---- #card ---- */
-
-#card {
-  position: relative;
-  float: left;
-  font-family: sans-serif;
-  width: 31.33333%! important;
-  height: auto;
-  margin: 2px;
-  padding: 10px;
-  border: 1px solid #616161;
-  background: rgba( 253, 253, 253, 0.9);
-  color: #5C564B;
-  box-shadow: 1px 1px 1px #999999;
- border-radius: 23px 23px 23px 23px;
--moz-border-radius: 23px 23px 23px 23px;
--webkit-border-radius: 23px 23px 23px 23px;
-border: 2px solid #ED204C;
+$(window).load(function() {
 
-}
 
-#card img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
+    var qsRegex;
+    var buttonFilter;
+    var $quicksearch = $('#quicksearch');
+    var $container = $('#database')
+    var timeout;
+   
+    var public_spreadsheet_url = '1Yg7etMyeGq3Q5D2LUhuvjtoNBTPWdpaWrVU5n90erlQ';
 
-.credit {
-  font-size: 11px;
-  color: #666;
-}
+    var timestampdata = "https://spreadsheets.google.com/feeds/cells/" + public_spreadsheet_url + "/od6/public/basic?alt=json"
 
+    // Call the Google Spreadsheet as a regular JSON to get latest timestamp which is not included in Tabletop.js
 
 
-@media only screen and (max-width: 500px) {
-   #card {
-  width: 48%! important;
-}
+    $.ajax({
+        url: timestampdata,
+        dataType: "jsonp",
+        success: function(data) {
+            // Get timestamp and parse it to readable format
 
-h2 {
-  font-size: 24px;
-  color: green;
-}
-.button {
-  font-size: 13px;
-}
-}
 
+            var date = data.feed.updated.$t
 
+            var MM = {
+                Jan: "Jan.",
+                Feb: "Feb.",
+                Mar: "March",
+                Apr: "April",
+                May: "May",
+                Jun: "June",
+                Jul: "July",
+                Aug: "Aug.",
+                Sep: "Sept.",
+                Oct: "Oct.",
+                Nov: "Nov.",
+                Dec: "Dec."
+            }
 
+            var formatdate = String(new Date(date)).replace(
+                /\w{3} (\w{3}) (\d{2}) (\d{4}) (\d{2}):(\d{2}):[^(]+\(([A-Z]{3})\)/,
+                function($0, $1, $2, $3, $4, $5, $6) {
+                    return MM[$1] + " " + $2 + ", " + $3 + " at " + $4 % 12 + ":" + $5 + (+$4 > 12 ? "PM" : "AM") + " " + $6
+                }
+            )
 
-@media only screen and (max-width: 320px) {
-   #card {
-  width: 100%! important;
 
-}
+            $('.updated').append("Last updated " + formatdate)
+        },
+    });
 
-h2 {
-  font-size: 20px;
-}
 
-.button {
-  font-size: 13px;
-}
-}
 
+    // Tabletop initialization
 
-#card .category {
-  display: inline-block;
-  font-size: 13px;
-  background-color: #800000;
-  /*background-color: #ED204C;*/
-  color: #fff;
-  width: auto;
-  letter-spacing: 0;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  visibility: hidden;
+    Tabletop.init({
+        key: public_spreadsheet_url,
+        callback: getTable,
+        simpleSheet: true
+    })
 
-}
+    // Function that fetches the Google Spreadsheet
 
 
-#card img {
-  border: 1px solid #333;
-}
+    function getTable(data, tabletop) {
 
+        var sheetname = tabletop.foundSheetNames[0];
+        var sheetnamecontrol = tabletop.foundSheetNames[1];
 
-#card .readmore, #card .readmore a {
-  font-weight: 700;
-  /*color: #ED204C;*/
-  color: #800000;
-  font-size: 12px;
-}
+        // Get title of datasheet
 
-#card .description {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
+        var title = sheetname;
+        $("h2").append(title)
 
+        // Get credits and explainer from "Control spreadsheet"
 
-#card .boldsubhed, #card .boldsubhed a  {
-font-size: 12px;
-font-weight: 700;
-color: #000;
-float: right;
+        $.each(tabletop.sheets(sheetnamecontrol).all(), function(i, v) {
 
-}
-#card .name {
-  color: #ED204C;
-  font-size: 3.2vw;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding-top: 5px;
+            var explainer = v.explainer
+            var credits = v.credits
+            $(".credit").append(credits)
+            $(".explainer").append(explainer)
+        });
 
-}
+        var result = [];
+        var count = 1;
 
 
+        $.each(tabletop.sheets(sheetname).all(), function(i, v) {
 
 
-.is-checked {
-  background-color: #ebebeb;
-}
+            // Parses the resulting JSON into the individual squares for each row
 
+            $container.append('<div id="card'+ v.uid +'"><div id="card" class="front">\<div class="name">' + v.title + '</div></div><div class="back"><div class="colorsubhed"><span>"</span>' + v.subhed1 + '<span>"</span></div><div class="boldsubhed">--<a href="' + v.link + ' " target="_blank">' + v.subhed2 + '</a></div><div class="category">' + v.filtercategory + '</div></div></div>');
 
-#card .colorsubhed {
 
-  font-weight: 300;
-  font-size: 14px;
-  /*color: #ED204C;*/
-  color: #333;
-  padding-bottom: 10px;
+            // Gets all unique filtercategory values and puts them into an array
+            if ($.inArray(v.filtercategory, result) == -1) {
 
+                result.push(v.filtercategory);
 
-}
+                // Creates the filter buttons
 
-#card span {
-  font-weight: 400;
-}
+                $('#filter').append('<button id="' + v.filtercategory + '" class="btn btn-default" data-value="choice' + count++ + '">' + v.filtercategory + '</button>')
 
+            }
 
-#card .date, #card .description  {
-  font-size: 13px;
 
-}
 
-.page-header {
-  padding: 0px;
-  margin: 0px;
-}
+        });
 
-.btn {
-  letter-spacing: 0;
-}
 
+        // Adds the search function
 
 
-a:active {
-  text-decoration: none;
+        $quicksearch.keyup(debounce(function() {
+            qsRegex = new RegExp($quicksearch.val(), 'gi');
+            $container.isotope();
+        }));
 
-}
 
-.explainer {
-  padding: 10px 0;
-}
+        // Sorts them into responsive square layout using isotope.js
+        $container.imagesLoaded(function() {
+
+            $container.isotope({
+                itemSelector: '#card',
+                layoutMode: 'masonry',
+                // so that isotope will filter both search and filter results
+                filter: function() {
+                    var $this = $(this);
+                    var searchResult = qsRegex ? $this.text().match(qsRegex) : true;
+
+                    var buttonResult = buttonFilter ? $this.is(buttonFilter) : true;
+
+                    return searchResult && buttonResult;
+
+                }
+
+            });
+
+
+        });
+
+         $("#card01","#card02","#card03","#card04","#card05","#card06","#card07","#card08","#card09","#card10","#card11","#card12","#card13","#card14","#card15","#card16","#card17","#card18","#card19","#card20","#card21","#card22","#card23","#card24","#card25","#card26","#card27","#card28","#card29","#card30","#card31","#card32","#card33","#card34","#card35","#card36").flip();
+
+
+        // debounce so filtering doesn't happen every millisecond
+        function debounce(fn, threshold) {
+
+            return function debounced() {
+                if (timeout) {
+                    clearTimeout(timeout);
+                }
+
+                function delayed() {
+                    fn();
+                    timeout = null;
+                }
+                timeout = setTimeout(delayed, threshold || 100);
+            }
+        }
+
+      
+
+        // Adds a click function to all buttons in the group
+
+        $('.btn-group').each(function(i, buttonGroup) {
+            var $buttonGroup = $(buttonGroup);
+            var allbuttonids = $("button").attr('id');
+            $buttonGroup.on('click', 'button', function() {
+
+                // Changes to .is-checked class when clicked
+
+                $buttonGroup.find('.is-checked').removeClass('is-checked');
+                $(this).addClass('is-checked');
+
+                // Gets all values that matches the clicked button's data value
+
+                buttonFilter = $(this).attr('data-value');
+                textFilter = $(this).text();
+
+
+                function getitems() {
+                    var name = $(this).find('.category').text();
+
+                    if (textFilter != "Show All") {
+                        return name.match(textFilter);
+
+                    } else {
+                        return "*";
+                    }
+
+                }
+
+                buttonFilter = getitems || buttonFilter;
+
+                $container.isotope();
+
+
+            });
+        });
+
+ 
+
+
+    };
+
+
+});
