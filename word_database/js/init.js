@@ -1,6 +1,5 @@
 $(window).load(function() {
 
-    $("div#card").flip();
 
     var qsRegex;
     var buttonFilter;
@@ -93,7 +92,7 @@ $(window).load(function() {
 
             // Parses the resulting JSON into the individual squares for each row
 
-            $container.append('<div id="card"><div class="front"><div class="name">' + v.title + '</div></div><div class="back"><div class="colorsubhed"><span>"</span>' + v.subhed1 + '<span>"</span></div><div class="boldsubhed">--<a href="' + v.link + ' " target="_blank">' + v.subhed2 + '</a></div><div class="category">' + v.filtercategory + '</div></div></div>');
+            $container.append('<div id="card'+ v.uid +'"><div id="card" class="front">\<div class="name">' + v.title + '</div></div><div class="back"><div class="colorsubhed"><span>"</span>' + v.subhed1 + '<span>"</span></div><div class="boldsubhed">--<a href="' + v.link + ' " target="_blank">' + v.subhed2 + '</a></div><div class="category">' + v.filtercategory + '</div></div></div>');
 
 
             // Gets all unique filtercategory values and puts them into an array
@@ -110,6 +109,7 @@ $(window).load(function() {
 
 
         });
+
 
         // Adds the search function
 
@@ -142,6 +142,7 @@ $(window).load(function() {
 
         });
 
+         $("#card01","#card02","#card03","#card04","#card05","#card06","#card07","#card08","#card09","#card10","#card11","#card12","#card13","#card14","#card15","#card16","#card17","#card18","#card19","#card20","#card21","#card22","#card23","#card24","#card25","#card26","#card27","#card28","#card29","#card30","#card31","#card32","#card33","#card34","#card35","#card36").flip();
 
 
         // debounce so filtering doesn't happen every millisecond
@@ -160,7 +161,7 @@ $(window).load(function() {
             }
         }
 
-       
+      
 
         // Adds a click function to all buttons in the group
 
