@@ -118,8 +118,10 @@ $(window).load(function() {
         }));
 
 
-        // Sorts them into responsive square layout using isotope.js
+        // imagesLoaded waits until all images are loaded before firing
         $container.imagesLoaded(function() {
+
+            // Sorts them into responsive square layout using isotope.js
 
             $container.isotope({
                 itemSelector: '#element-item',

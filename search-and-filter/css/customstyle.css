@@ -8,7 +8,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   margin: 10px;
   line-height: 1.5;
-  width: 70%;
+
 
 }
 h2 {
@@ -104,7 +104,7 @@ a:hover {
   position: relative;
   float: left;
   font-family: sans-serif;
-  width: 31.33333%! important;
+  width: 24.5%! important;
   height: auto;
   margin: 2px;
   padding: 10px;
@@ -169,6 +169,7 @@ h2 {
   letter-spacing: 0;
   text-transform: uppercase;
   margin-bottom: 10px;
+
 }
 
 

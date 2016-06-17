@@ -1,6 +1,5 @@
 $(window).load(function() {
 
-    $("div#card").flip();
 
     var qsRegex;
     var buttonFilter;

@@ -126,8 +126,9 @@ border: 2px solid #ED204C;
 }
 
 .credit {
-  font-size: 11px;
+  font-size: 14px;
   color: #666;
+  padding: 20px 0;
 }
 
 
@@ -252,6 +253,9 @@ float: right;
   letter-spacing: 0;
 }
 
+.updated {
+  font-weight: 700;
+}
 
 
 a:active {
