@@ -1,4 +1,4 @@
-#People & Event Database
+#Feats Thru Sheets
 An interactive, filterable, searchable database of people and events that can be reskinned for different types of stories and updated solely by reporters.
 ___
 
@@ -19,12 +19,6 @@ Reporters can also change titles, explainer text and credits. In addition, the d
 
 There's also a filter button and search option for the readers that brings up certain data. The transitions were created using [Isotope.js.](http://isotope.metafizzy.co)
 
-<!-- ___
-
-
-![alt text](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/breakingnews-template.gif "Gif of Filtering")
-
-___ -->
 
 ___
 
@@ -34,14 +28,16 @@ Try our Template Demos:
 + [Sort and Search](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/index_feature.html)
 
 
-How we've used it:
+How we've used it and customized it:
 
 + [Paris attackers status](http://www.ibtimes.com/who-are-paris-terrorists-suspects-identified-plus-everything-we-know-2191815)
-+ [Meet The 20 Most Influential People In Cannabis](http://www.ibtimes.com/pulse/marijuana-legalization-2015-meet-20-most-influential-people-cannabis-1887890)
 
-You can also customize the style and add your own features:
++ [Brexit World Leader Opinions](http://www.ibtimes.com/brexit-referendum-2016-amid-tight-polls-heres-who-wants-stay-who-wants-leave-among-2376752)
 
-+ Guides: [Ultimate Interactive Music Festival 2015 List To Guide Your Summer Concert Experience](http://www.ibtimes.com/pulse/ultimate-interactive-music-festival-2015-list-guide-your-summer-concert-experience-1868418)
++ [Summer Concert Alternatives](http://www.ibtimes.com/beyonce-formation-tickets-too-expensive-here-are-cheaper-alternatives-summers-hottest-2368275)
+
++ [Victimes of Mass Shootings](http://www.ibtimes.com/here-complete-list-every-person-killed-mass-shooting-2015-2243200)
+
 
 ___
 
