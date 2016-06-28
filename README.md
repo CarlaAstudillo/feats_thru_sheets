@@ -146,7 +146,7 @@ Go to bottom of the Google Spreadsheet and click on the tab called "Control". Th
 
 #####Now with Pym.js!
 
-If you need to iframe in the database responsively, we now provide a [template](with-pym/*) using pym.js. 
+If you need to iframe in the database responsively, we now provide a [template](with-pym/) using pym.js. 
 
 ##License
 
