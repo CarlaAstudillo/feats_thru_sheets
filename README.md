@@ -9,23 +9,18 @@ ___
 
 
 
-We've created two templates connecting the front-end to a back-end Google Spreadsheet using [tabletop.js.](https://github.com/jsoma/tabletop) They can be customized by developers, and reporters can add content and images in a Google Spreadsheet and all changes will be reflected in real time. This is ideal for breaking news situations.
+We've created a template connecting the front-end to a back-end Google Spreadsheet using [tabletop.js.](https://github.com/jsoma/tabletop) They can be customized by developers, and reporters can add content and images in a Google Spreadsheet and all changes will be reflected in real time. This is ideal for breaking news situations.
 
 Reporters can also change titles, explainer text and credits. In addition, the database has a timestamp that chronicles the last time a reporter updated the database.
 
 ##### Check [out what it looks like](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/index_breaking.html)
 
-##### ... Which is powered through [this Spreadsheet](https://docs.google.com/spreadsheets/d/1Jn4I3FIerKG5UGJSq3c3bEDs_V_9OxIGUnJ-Bu-3vEQ/edit#gid=0)
+##### ... Which is powered through [this Spreadsheet](https://docs.google.com/spreadsheets/d/1gTPFZQW-dudkakhyIBRZ6nxbW74WweGH7HOag2p_oDc/edit?usp=sharing)
 
 There's also a filter button and search option for the readers that brings up certain data. The transitions were created using [Isotope.js.](http://isotope.metafizzy.co)
 
 
 ___
-
-Try our Template Demos: 
-+ [Search and Filter](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/index_breaking.html)
-+ [Filter Only](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/index_feature.html)
-+ [Sort and Search](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/index_feature.html)
 
 
 How we've used it and customized it:
@@ -36,7 +31,7 @@ How we've used it and customized it:
 
 + [Summer Concert Alternatives](http://www.ibtimes.com/beyonce-formation-tickets-too-expensive-here-are-cheaper-alternatives-summers-hottest-2368275)
 
-+ [Victimes of Mass Shootings](http://www.ibtimes.com/here-complete-list-every-person-killed-mass-shooting-2015-2243200)
++ [Victims of Mass Shootings](http://www.ibtimes.com/here-complete-list-every-person-killed-mass-shooting-2015-2243200)
 
 
 ___
@@ -53,7 +48,7 @@ ___
 
 ##Set it up
 
-Create a new copy of [this Google Spreadsheet](https://docs.google.com/spreadsheets/d/1Jn4I3FIerKG5UGJSq3c3bEDs_V_9OxIGUnJ-Bu-3vEQ/edit#gid=0) in Google Docs. Then, go to the File menu and click on Publish to the web. Clicking on Start Publishing will make a URL appear
+Create a new copy of [this Google Spreadsheet](https://docs.google.com/spreadsheets/d/1gTPFZQW-dudkakhyIBRZ6nxbW74WweGH7HOag2p_oDc/edit?usp=sharing) into your Google Drive. Then, go to the File menu and click on Publish to the web. Clicking on Start Publishing will make a URL like this appear:
 
 ```
 https://docs.google.com/spreadsheets/d/1Jn4I3FIerKG5UGJSq3c3bEDs_V_9OxIGUnJ-Bu-3vEQ/pubhtml
@@ -148,6 +143,10 @@ Go to bottom of the Google Spreadsheet and click on the tab called "Control". Th
 ![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/control_change.png "Change tab to the one called 'Control'")
 
 ![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/credit_explainer_sheet.png "New explainer spreadsheet")
+
+#####Now with Pym.js!
+
+If you need to iframe in the database responsively, we now provide a [template](with-pym/*) using pym.js. 
 
 ##License
 

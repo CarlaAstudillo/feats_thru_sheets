@@ -1,18 +1,52 @@
-* {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 body {
-  font-family: 'Source Sans Pro', sans-serif;
-  margin: 10px;
+  font-family: sans-serif;
+  margin: 0 10px;
   line-height: 1.5;
-  width: 100%;
+
 
 }
 h2 {
   font-weight: 700;
+}
+
+.credit {
+  margin-top: 20px;
+  font-size: 11px;
+  color: #666;
+}
+
+.explainer {
+  padding: 10px 0;
+}
+
+.updated {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+
+
+
+
+
+a {
+  color: #555;
+  font-size: 15px;
+  text-decoration: underline;
+  margin: 0;
+  padding: 0;
+  
+}
+
+a:hover {
+  color: #555;
+  
+  
+}
+
+a:active {
+  text-decoration: none;
+
 }
 
 /* ---- button ---- */
@@ -29,22 +63,6 @@ h2 {
   font-size: 16px;
   text-shadow: 0 1px white;
   cursor: pointer;
-}
-
-
-a {
-  color: #555;
-  font-size: 15px;
-  text-decoration: underline;
-  margin: 0;
-  padding: 0;
-  
-}
-
-a:hover {
-  color: #555;
-  
-  
 }
 
 .button:hover {
@@ -98,13 +116,13 @@ a:hover {
   clear: both;
 }
 
-/* ---- #card ---- */
+/* ---- #element-item ---- */
 
-#card {
+#element-item {
   position: relative;
   float: left;
   font-family: sans-serif;
-  width: 31.33333%! important;
+  width: 24.5%! important;
   height: auto;
   margin: 2px;
   padding: 10px;
@@ -112,134 +130,78 @@ a:hover {
   background: rgba( 253, 253, 253, 0.9);
   color: #5C564B;
   box-shadow: 1px 1px 1px #999999;
- border-radius: 23px 23px 23px 23px;
--moz-border-radius: 23px 23px 23px 23px;
--webkit-border-radius: 23px 23px 23px 23px;
-border: 2px solid #ED204C;
-
 }
 
-#card img {
+#element-item img {
   width: 100%;
   height: auto;
   object-fit: contain;
 }
 
-.credit {
-  font-size: 14px;
-  color: #666;
-  padding: 20px 0;
-}
 
 
-
-@media only screen and (max-width: 500px) {
-   #card {
-  width: 48%! important;
-}
-
-h2 {
-  font-size: 24px;
-  color: green;
-}
-.button {
-  font-size: 13px;
-}
-}
-
-
-
-
-@media only screen and (max-width: 320px) {
-   #card {
-  width: 100%! important;
-
-}
-
-h2 {
-  font-size: 20px;
-}
-
-.button {
-  font-size: 13px;
-}
-}
-
-
-#card .category {
+#element-item .category {
   display: inline-block;
-  font-size: 13px;
+  font-size: 15px;
   background-color: #800000;
-  /*background-color: #ED204C;*/
+  padding: 5px 25px;
   color: #fff;
   width: auto;
   letter-spacing: 0;
   text-transform: uppercase;
   margin-bottom: 10px;
-  visibility: hidden;
 
 }
 
 
-#card img {
+#element-item img {
   border: 1px solid #333;
 }
 
 
-#card .readmore, #card .readmore a {
+#element-item .readmore, #element-item .readmore a {
   font-weight: 700;
-  /*color: #ED204C;*/
   color: #800000;
   font-size: 12px;
 }
 
-#card .description {
+#element-item .description {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
 
-#card .boldsubhed, #card .boldsubhed a  {
-font-size: 12px;
+#element-item .boldsubhed {
+font-size: 13px;
 font-weight: 700;
-color: #000;
-float: right;
+color: #666;
 
 }
-#card .name {
-  color: #ED204C;
-  font-size: 3.2vw;
+#element-item .name {
+  color: #333;
+  font-size: 15px;
   font-weight: 700;
   text-transform: uppercase;
   padding-top: 5px;
 
 }
 
-
-
-
 .is-checked {
   background-color: #ebebeb;
 }
 
 
-#card .colorsubhed {
-
-  font-weight: 300;
-  font-size: 14px;
-  /*color: #ED204C;*/
-  color: #333;
-  padding-bottom: 10px;
-
+#element-item .colorsubhed {
+  font-weight: 700;
+  color: #800000;
 
 }
 
-#card span {
-  font-weight: 400;
+#element-item .location {
+  font-weight: 700;
 }
 
-
-#card .date, #card .description  {
+#element-item .date, #element-item .description  {
   font-size: 13px;
 
 }
@@ -249,20 +211,76 @@ float: right;
   margin: 0px;
 }
 
-.btn {
-  letter-spacing: 0;
+
+
+
+
+@media screen and (min-width: 1000px) {
+  body {
+    width: 1000px;
+  }
 }
 
-.updated {
-  font-weight: 700;
+@media (max-width: 850px) {
+   #element-item {
+  width: 32%! important;
 }
-
-
-a:active {
-  text-decoration: none;
 
 }
 
-.explainer {
-  padding: 10px 0;
+@media (max-width: 550px) {
+   #element-item {
+  width: 47%! important;
+}
+
+h2 {
+  font-size: 1.6em
+}
+.btn-default  {
+  font-size: 0.9em;
+}
+
+body {
+  font-size: 1.0em;
+}
+
+#element-item .boldsubhed, #element-item .description {
+font-size: 1.0em;
+
+}
+#element-item .category {
+  font-size: 1.2em;
+  padding: 5px 15px;
+}
+#element-item .name {
+
+  font-size: 1.1em;
+
+}
+}
+
+@media (max-width: 320px) {
+   #element-item {
+  width: 100%! important;
+}
+
+
+.btn-default {
+  font-size: 0.7em;
+}
+
+body {
+  font-size: 1.3em;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+#element-item img {
+  height: 120px;
+
+
+}
+
 }

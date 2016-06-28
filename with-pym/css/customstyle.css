@@ -1,35 +1,35 @@
-* {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
 body {
-  font-family: 'Source Sans Pro', sans-serif;
-  margin: 10px;
+  font-family: sans-serif;
+  margin: 0 10px;
   line-height: 1.5;
-  /*width: 70%;*/
+
+
+}
+h2 {
+  font-weight: 700;
 }
 
-/* ---- button ---- */
+.credit {
+  margin-top: 20px;
+  font-size: 11px;
+  color: #666;
+}
 
-.pdb-button {
-  display: inline-block;
-  border-radius: 4px;
-  background: #e5e5e5;
-  color: #222;
-  font: 14px/18px; 
-  font-family: "source_sans_problack", "source sans pro", sans-serif;
-  letter-spacing: 1px;
-  padding:10px 0;
-  text-align: center;
-  text-transform: uppercase;
-  cursor: pointer;
-  height: 40px;
-  border:none;
+.explainer {
+  padding: 10px 0;
+}
+
+.updated {
+  font-weight: bold;
+  font-size: 12px;
 }
 
 
-.pdb-button a {
+
+
+
+
+a {
   color: #555;
   font-size: 15px;
   text-decoration: underline;
@@ -38,52 +38,73 @@ body {
   
 }
 
-.pdb-button a:hover {
+a:hover {
   color: #555;
   
   
 }
 
-.pdb-button:hover {
-  background-color: #ccc;
+a:active {
+  text-decoration: none;
+
+}
+
+/* ---- button ---- */
+
+.button {
+  display: inline-block;
+  padding: 0.5em 1.0em;
+  background: #EEE;
+  border: none;
+  border-radius: 7px;
+  background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2) );
+  color: #222;
+  font-family: sans-serif;
+  font-size: 16px;
+  text-shadow: 0 1px white;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #8CF;
   text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
+  color: #222;
 }
 
-.pdb-button:active,
-.pdb-button.is-checked {
-  background-color: #333;
-  color: #fff;
+.button:active,
+.button.is-checked {
+  background-color: #ED204C;
 }
 }
 
-.pdb-button.is-checked {
-  color: #fff;
+.button.is-checked {
+  color: white;
   text-shadow: 0 -1px hsla(0, 0%, 0%, 0.8);
-  background-color: #333;
+  background-color: #ED204C;
 }
 
-.pdb-button:active {
+.button:active {
   box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
-  background-color: #333;
+  background-color: #ED204C;
 }
 
 /* ---- button-group ---- */
 
-.pdb-button-group:after {
+.button-group:after {
   content: '';
   display: block;
   clear: both;
 }
 
-.pdb-button-group .pdb-button {
+.button-group .button {
   float: left;
   border-radius: 0;
   margin-left: 0;
   margin-right: 1px;
 }
 
-.pdb-button-group .pdb-button:first-child { border-radius: 0.5em 0 0 0.5em; }
-.pdb-button-group .pdb-button:last-child { border-radius: 0 0.5em 0.5em 0; }
+.button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
+.button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; }
 
 /* ---- isotope ---- */
 
@@ -101,84 +122,69 @@ body {
   position: relative;
   float: left;
   font-family: sans-serif;
+  width: 24.5%! important;
   height: auto;
   margin: 2px;
-  padding: 4px;
+  padding: 10px;
+  border: 1px solid #616161;
   background: rgba( 253, 253, 253, 0.9);
   color: #5C564B;
-  width: 31.33333%! important;
-
+  box-shadow: 1px 1px 1px #999999;
 }
 
-
-.pdb-credit {
-  clear: both;
-  font-size: 11px;
-  color: #666;
-}
-
-@media (max-width: 500px) {
-   #element-item {
-  width: 48%! important;
-}
-
-h2 {
-  font-size: 24px;
-}
-.pdb-button {
-  font-size: 13px;
-}
-}
-
-@media (max-width: 320px) {
-   #element-item {
-  width: 100%! important;
-}
-
-h2 {
-  font-size: 24px;
-}
-
-.pdb-button {
-  font-size: 13px;
-}
+#element-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 
 
-#element-item > * {
- 
+#element-item .category {
+  display: inline-block;
+  font-size: 15px;
+  background-color: #800000;
+  padding: 5px 25px;
+  color: #fff;
+  width: auto;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+
 }
 
+
+#element-item img {
+  border: 1px solid #333;
+}
 
 
 #element-item .readmore, #element-item .readmore a {
   font-weight: 700;
-  color: #79ce00;
+  color: #800000;
   font-size: 12px;
-    text-align: center;
-
 }
 
 #element-item .description {
-  padding-top: 5px;
-  padding-bottom: 5px;
-    text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
+
+#element-item .boldsubhed {
+font-size: 13px;
+font-weight: 700;
+color: #666;
+
+}
 #element-item .name {
   color: #333;
   font-size: 15px;
   font-weight: 700;
+  text-transform: uppercase;
   padding-top: 5px;
-  text-align: center;
-  text-shadow: 2px 2px 4px rgba(150, 150, 150, .5);
-}
 
-#element-item .hidden {
-  display: none;
 }
-
 
 .is-checked {
   background-color: #ebebeb;
@@ -186,11 +192,8 @@ h2 {
 
 
 #element-item .colorsubhed {
-
   font-weight: 700;
-  /*color: #ED204C;*/
   color: #800000;
-
 
 }
 
@@ -203,90 +206,81 @@ h2 {
 
 }
 
-
-
-a:active {
-  text-decoration: none;
-
-}
-
-.pdb-explainer {
-  padding: 10px 0;
+.page-header {
+  padding: 0px;
+  margin: 0px;
 }
 
 
-/* ---- #tooltip ---- */
 
 
-#element-item .tooltip {
-  background: #666666;
-  bottom: 100%;
-  color: #fff;
-  display: block;
-  left: -25px;
-  margin-bottom: 15px;
-  opacity: 0;
-  padding: 15px;
-  pointer-events: none;
-  position: absolute;
-  width: 100%;
-  -webkit-transform: translateY(10px);
-     -moz-transform: translateY(10px);
-      -ms-transform: translateY(10px);
-       -o-transform: translateY(10px);
-          transform: translateY(10px);
-  -webkit-transition: all .25s ease-out;
-     -moz-transition: all .25s ease-out;
-      -ms-transition: all .25s ease-out;
-       -o-transition: all .25s ease-out;
-          transition: all .25s ease-out;
-  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
-     -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
-      -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
-       -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
-          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+
+@media screen and (min-width: 1000px) {
+  body {
+    width: 1000px;
+  }
 }
 
-/* This bridges the gap so you can mouse into the tooltip without it disappearing */
-#element-item .tooltip:before {
-  bottom: -20px;
-  content: " ";
-  display: block;
-  height: 20px;
-  left: 0;
-  position: absolute;
-  width: 100%;
-}  
-
-/*CSS Triangles33*/
-#element-item .tooltip:after {
-  border-left: solid transparent 10px;
-  border-right: solid transparent 10px;
-  border-top: solid #666666 10px;
-  bottom: -10px;
-  content: " ";
-  height: 0;
-  left: 50%;
-  margin-left: -13px;
-  position: absolute;
-  width: 0;
-}
-  
-#element-item:hover .tooltip {
-  opacity: 1;
-  pointer-events: auto;
-  -webkit-transform: translateY(0px);
-     -moz-transform: translateY(0px);
-      -ms-transform: translateY(0px);
-       -o-transform: translateY(0px);
-          transform: translateY(0px);
+@media (max-width: 850px) {
+   #element-item {
+  width: 32%! important;
 }
 
-/* IE can just show/hide with no transition */
-.lte8 #element-item .tooltip {
-  display: none;
 }
 
-.lte8 .#element-item:hover .tooltip {
-  display: block;
+@media (max-width: 550px) {
+   #element-item {
+  width: 47%! important;
+}
+
+h2 {
+  font-size: 1.6em
+}
+.btn-default  {
+  font-size: 0.9em;
+}
+
+body {
+  font-size: 1.0em;
+}
+
+#element-item .boldsubhed, #element-item .description {
+font-size: 1.0em;
+
+}
+#element-item .category {
+  font-size: 1.2em;
+  padding: 5px 15px;
+}
+#element-item .name {
+
+  font-size: 1.1em;
+
+}
+}
+
+@media (max-width: 320px) {
+   #element-item {
+  width: 100%! important;
+}
+
+
+.btn-default {
+  font-size: 0.7em;
+}
+
+body {
+  font-size: 1.3em;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+#element-item img {
+  height: 120px;
+
+
+}
+
 }

@@ -9,7 +9,8 @@ $(window).load(function() {
    
     var public_spreadsheet_url = '1gTPFZQW-dudkakhyIBRZ6nxbW74WweGH7HOag2p_oDc';
 
-    var timestampdata = "https://spreadsheets.google.com/feeds/cells/" + public_spreadsheet_url + "/od6/public/basic?alt=json"
+
+    var timestampdata = "https://spreadsheets.google.com/feeds/cells/" + public_spreadsheet_url + "/2/public/full?alt=json"
 
     // Call the Google Spreadsheet as a regular JSON to get latest timestamp which is not included in Tabletop.js
 
