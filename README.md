@@ -3,7 +3,7 @@ An interactive, filterable, searchable database of people and events that can be
 ___
 
 
-![alt text](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/breakingnews-template.png "Screenshot of the People Database")
+![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/feats_thru_sheets/img/template-pics/breakingnews-template.png "Screenshot of the People Database")
 
 ___
 
@@ -13,7 +13,7 @@ We've created a template connecting the front-end to a back-end Google Spreadshe
 
 Reporters can also change titles, explainer text and credits. In addition, the database has a timestamp that chronicles the last time a reporter updated the database.
 
-##### Check [out what it looks like](http://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/index_breaking.html)
+##### Check [out what it looks like](https://s3-us-west-2.amazonaws.com/ibt-viz/feats_thru_sheets/template/index.html)
 
 ##### ... Which is powered through [this Spreadsheet](https://docs.google.com/spreadsheets/d/1gTPFZQW-dudkakhyIBRZ6nxbW74WweGH7HOag2p_oDc/edit?usp=sharing)
 
@@ -99,17 +99,17 @@ You can also change what the style of the database looks like by changing the co
 
 Share the Google Spreadsheet with your reporters. 
 
-![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/Google_Spreadsheet.png "Google Spreadsheet")
+![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/feats_thru_sheets/img/template-pics/Google_Spreadsheet.png "Google Spreadsheet")
 
 Let the reporters add new data to the Google Spreadsheet. Every column header corresponds to a section in the data.
 
 For example this:
 
-![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/Google_spreadsheet2.png "Google Spreadsheet Sample")
+![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/feats_thru_sheets/img/template-pics/Google_spreadsheet2.png "Google Spreadsheet Sample")
 
 Looks like this:
 
-![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/Sample_template.png "Sample Template")
+![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/feats_thru_sheets/img/template-pics/Sample_template.png "Sample Template")
 
 The link that you put in the Google Spreadsheet will take you to that site by clicking "Read more" on the database.
 
@@ -119,30 +119,30 @@ The link that you put in the Google Spreadsheet will take you to that site by cl
 
 Every picture that you put on the database has to be uploaded to a server. Then add the link to the picture under the header "Pic_Link"
 
-![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/pic_link.png "Pic_Link example")
+![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/feats_thru_sheets/img/template-pics/pic_link.png "Pic_Link example")
 
 
 ####Filter Categories
 
 The header "Filter_category" in the Google Spreadsheet, highlighted in yellow, are the filter buttons at the top. You can create a new category by simply adding the new category to the "Filter category". Remember that adding too many categories will add too many buttons and won't look as good.
 
-![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/filter_category1.png "Filter Category Spreadsheet")
+![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/feats_thru_sheets/img/template-pics/filter_category1.png "Filter Category Spreadsheet")
 
-![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/filter_category2.png "Filter Category: What it looks like")
+![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/feats_thru_sheets/img/template-pics/filter_category2.png "Filter Category: What it looks like")
 
 #####How to Change the Headline
 
 Go to bottom of the Google Spreadsheet and change the tab name. That will automatically change the headline.
 
-![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/headline_change.png "Change tab name at the bottom")
+![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/feats_thru_sheets/img/template-pics/headline_change.png "Change tab name at the bottom")
 
 #####How to Change the Explainer and Credits
 
 Go to bottom of the Google Spreadsheet and click on the tab called "Control". This will take you to a new spreadsheet where you can change what it says in the explainer and in the credits.
 
-![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/control_change.png "Change tab to the one called 'Control'")
+![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/feats_thru_sheets/img/template-pics/control_change.png "Change tab to the one called 'Control'")
 
-![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/breaking_who_is_template/img/template-pics/credit_explainer_sheet.png "New explainer spreadsheet")
+![alt text](https://s3-us-west-2.amazonaws.com/ibt-viz/feats_thru_sheets/img/template-pics/credit_explainer_sheet.png "New explainer spreadsheet")
 
 #####Now with Pym.js!
 
